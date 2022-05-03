@@ -16,7 +16,7 @@ class Employee
 		string phone_number;
 		string department;
 
-        map<string, string> availability;
+        map<string, vector<int>> availability;
 
 	public:
 		Employee(string, string, string, string, string);
@@ -32,11 +32,11 @@ class Employee
 
 		string get_name() const;
 		string get_id() const;
-		int get_seniority() const;
+		string get_seniority() const;
 		string get_phone() const;
 		string get_department() const;
 
-		void display() const;
+		void display_employee();
 };
 
 

@@ -1,5 +1,7 @@
 //schedule class definition
 #include <iostream>
+#include <string>
+#include <iomanip>
 #include "employee.h"
 using namespace std;
 
@@ -66,11 +68,47 @@ bool Employee::set_department(string employee_department)
 
 bool Employee::set_availability(vector<string> availability_csv)
 {
-    availability["Monday"] = availability_csv[0];
-    availability["Tuesday"] = availability_csv[1];
-    availability["Wednesday"] = availability_csv[2];
-    availability["Thursday"] = availability_csv[3];
-    availability["Friday"] = availability_csv[4];
+    for(int i = 1; i < 6; i++)
+    {
+        string day = availability_csv[i];
+        string s0(1,day[0]);
+        string s1(1,day[1]);
+        string s2(1,day[2]);
+
+        int morning = stoi(s0);
+        int afternoon = stoi(s1);
+        int night = stoi(s2);
+
+        switch(i)
+        {
+            case 1:
+                availability["Monday"].push_back(morning);
+                availability["Monday"].push_back(afternoon);
+                availability["Monday"].push_back(night);
+                break;
+            case 2:
+                availability["Tuesday"].push_back(morning);
+                availability["Tuesday"].push_back(afternoon);
+                availability["Tuesday"].push_back(night);
+                break;
+            case 3:
+                availability["Wednesday"].push_back(morning);
+                availability["Wednesday"].push_back(afternoon);
+                availability["Wednesday"].push_back(night);
+                break;
+            case 4:
+                availability["Thursday"].push_back(morning);
+                availability["Thursday"].push_back(afternoon);
+                availability["Thursday"].push_back(night);
+                break;
+            case 5:
+                availability["Friday"].push_back(morning);
+                availability["Friday"].push_back(afternoon);
+                availability["Friday"].push_back(night);
+                break;
+        }
+    }
+    return true;
 }
 
 
@@ -102,11 +140,21 @@ string Employee::get_department() const
 
 
 
-void Employee::display() const
-{
-	cout << "EMPLOYEE NAME: " << name << endl;
+void Employee::display_employee(){
+    cout << "EMPLOYEE NAME: " << name << endl;
 	cout << "ID: " << id << endl;
 	cout << "SENIORITY: " << seniority << endl;
 	cout << "PHONE NUMBER: " <<  phone_number << endl;
-	cout << "DEPARTMENT: " << department << endl;
+	cout << "DEPARTMENT: " << department << endl << endl;
+
+
+    cout << "AVAILABILITY" << endl;
+    cout << "###################################" << endl;
+    cout << left << setw(10) << "Day" << left << setw(10) << "Morning" << left << setw(10) << "Afternoon" << left << setw(10) << "Night" << endl;
+    cout << left << setw(10) << "Monday" << left << setw(10) << availability["Monday"].at(0) << left << setw(10) << availability["Monday"].at(1) << left << setw(10) << availability["Monday"].at(2) << endl;
+    cout << left << setw(10) << "Tuesday" << left << setw(10) << availability["Tuesday"].at(0) << left << setw(10) << availability["Tuesday"].at(1) << left << setw(10) << availability["Tuesday"].at(2) << endl;
+    cout << left << setw(10) << "Wednesday" << left << setw(10) << availability["Wednesday"].at(0) << left << setw(10) << availability["Wednesday"].at(1) << left << setw(10) << availability["Wednesday"].at(2) << endl;
+    cout << left << setw(10) << "Thursday" << left << setw(10) << availability["Thursday"].at(0) << left << setw(10) << availability["Thursday"].at(1) << left << setw(10) << availability["Thursday"].at(2) << endl;
+    cout << left << setw(10) << "Friday" << left << setw(10) << availability["Friday"].at(0) << left << setw(10) << availability["Friday"].at(1) << left << setw(10) << availability["Friday"].at(2) << endl;
+    cout << endl;
 }
