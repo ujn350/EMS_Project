@@ -138,6 +138,11 @@ string Employee::get_department() const
 	return department;
 }
 
+map<string, vector<int>> Employee::get_availability() const
+{
+    return availability;
+}
+
 
 
 void Employee::display_employee(){

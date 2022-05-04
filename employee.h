@@ -35,6 +35,7 @@ class Employee
 		string get_seniority() const;
 		string get_phone() const;
 		string get_department() const;
+        map<string, vector<int>> get_availability() const;
 
 		void display_employee();
 };

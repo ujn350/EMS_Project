@@ -5,6 +5,7 @@
 #include <sstream>
 #include <list>
 #include "employee.h"
+#include "schedule.h"
 using namespace std;
 
 //Checks if a given id is present within EmployeeList
@@ -89,6 +90,10 @@ int main()
     }
 
     display(EmployeeList);
+
+    //Schedule generation
+    Schedule work_schedule(EmployeeList);
+    work_schedule.generate_schedule();
 
 	return 0;
 }
