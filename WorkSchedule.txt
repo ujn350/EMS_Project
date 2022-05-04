@@ -1,0 +1,45 @@
+MONDAY
+###########################################
+               Employee  Employee  Employee  
+-------------------------------------------
+Morning   |    Jones     Michael             
+Afternoon |                                  
+Night     |    Smith                         
+
+
+TUESDAY
+###########################################
+               Employee  Employee  Employee  
+-------------------------------------------
+Morning   |    Jones     Michael             
+Afternoon |    Smith                         
+Night     |                                  
+
+
+WEDNESDAY
+###########################################
+               Employee  Employee  Employee  
+-------------------------------------------
+Morning   |    Jones     Michael             
+Afternoon |    Smith                         
+Night     |                                  
+
+
+THURSDAY
+###########################################
+               Employee  Employee  Employee  
+-------------------------------------------
+Morning   |    Smith                         
+Afternoon |                                  
+Night     |                                  
+
+
+FRIDAY
+###########################################
+               Employee  Employee  Employee  
+-------------------------------------------
+Morning   |    Smith     Jones               
+Afternoon |                                  
+Night     |                                  
+
+
